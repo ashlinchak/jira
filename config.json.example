@@ -1,0 +1,10 @@
+{
+    "host": "https://company.atlassian.net",
+    "api_path": "/rest/api/2",
+    "issue_path": "/issue",
+    "user": "your@mail.com",
+    "pass": "your jira pas",
+    "git": {
+        "master_branch": "master"
+    }
+}

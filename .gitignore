@@ -1,4 +1,5 @@
 config.json
 jira
+!bin/jira
 debug
 .vscode

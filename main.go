@@ -66,11 +66,14 @@ func createBranch(issue Issue, config Config, prefix string) {
 	git.CreateBranch(branchName, config.Git.MasterBranch)
 }
 
-// TODO: remove the last symbol if it's not a alphabet or number
 func prepareBranchName(str string) string {
 	name := strings.ToLower(str)
+	// Remove special symbols
 	reg, _ := regexp.Compile("[^a-zA-Z0-9_]+")
-	return reg.ReplaceAllString(name, "_")
+	name = reg.ReplaceAllString(name, "_")
+	// remove special symbols from the end of the string
+	req, _ := regexp.Compile("[^a-zA-Z0-9]+$")
+	return req.ReplaceAllString(name, "")
 }
 
 func showValidCommands() {

@@ -41,4 +41,3 @@ Currently implemented two types of prefix:
 * **--prefix** - custom branch prefix 
 
 ### TODO
-* Remove not alphabet symbols at the end of the branch name

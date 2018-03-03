@@ -1,4 +1,4 @@
-package main
+package lib
 
 // Issue model in Jira
 type Issue struct {

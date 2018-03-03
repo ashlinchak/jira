@@ -1,21 +1,12 @@
-package main
+package lib
 
 import (
 	"fmt"
-	"os"
 	"os/exec"
-	"path/filepath"
 	"strings"
 
 	"github.com/fatih/color"
 )
-
-func FilePath(file string) string {
-	ex, _ := os.Executable()
-	exPath := filepath.Dir(ex)
-
-	return exPath + "/" + file
-}
 
 func ExecuteCommand(command string, args []string) {
 

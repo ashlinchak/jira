@@ -9,13 +9,13 @@
 $ go build
 ```
 
-* Change the `config.json` file according to your settings. Also, your Jira password could be set via an environment variable (see below).
+* Change the `config.json` file according to your settings. Also, your Atlassian Jira password could be set via an environment variable (see below).
 * Add compiled executable `jira` file to the `$PATH`
 
 You can also use the executable from `bin` directory. Only needed to prepare config file.
 
 ### Environment variables:
-You can specify a Jira pass in the `config.json` or via `JIRA_PASS` environment variable.
+You can specify the Atlassian Jira pass in the `config.json` or via `JIRA_PASS` environment variable.
 
 ### Examples
 
@@ -38,6 +38,5 @@ Currently implemented two types of prefix:
 * Bug - will create a branch with the prefix **bugfix**
 
 ### Options
-* **--prefix** - custom branch prefix 
-
-### TODO
+* **-p, --prefix** - custom branch prefix 
+* **-m, --master** - master branch

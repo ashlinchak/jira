@@ -1,4 +1,4 @@
-package main
+package lib
 
 import (
 	"encoding/json"
@@ -44,7 +44,7 @@ func (cl *Client) GetIssue(issueKey string) (*Issue, error) {
 
 func setConfig(cl *Client) {
 	config := Config{}
-	config.setDefaults()
+	config.SetDefaults()
 	cl.config = config
 }
 

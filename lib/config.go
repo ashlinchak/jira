@@ -1,4 +1,4 @@
-package main
+package lib
 
 import (
 	"encoding/json"
@@ -18,13 +18,24 @@ type Config struct {
 }
 
 type git struct {
-	MasterBranch string `json:"master_branch"`
+	Branches branch `json:"branches"`
 }
 
-func (config *Config) setDefaults() {
-	file, _ := os.Open(FilePath("config.json"))
+type branch struct {
+	Master  string `json:"master"`
+	Feature string `json:"feature"`
+	Hotfix  string `json:"hotfix"`
+}
+
+func (config *Config) SetDefaults() {
+	file, err := os.Open(FilePath("config.json"))
+	if err != nil {
+		fmt.Println(err)
+		os.Exit(1)
+	}
+
 	decoder := json.NewDecoder(file)
-	err := decoder.Decode(config)
+	err = decoder.Decode(config)
 
 	if err != nil {
 		fmt.Println(err)
@@ -34,6 +45,5 @@ func (config *Config) setDefaults() {
 	if config.Password == "" {
 		config.Password = os.Getenv("JIRA_PASS")
 	}
-
 	config.IssueURI = config.Host + config.APIPath + config.IssuePath
 }

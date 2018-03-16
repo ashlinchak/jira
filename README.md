@@ -1,6 +1,6 @@
 # Jira Go plugin
 
-### Usage
+### Installation
 * Install Go language
 * Clone this repository
 * Build executable file by the command:
@@ -17,15 +17,20 @@ You can also use the executable from `bin` directory. Only needed to prepare con
 ### Environment variables:
 You can specify the Atlassian Jira pass in the `config.json` or via `JIRA_PASS` environment variable.
 
-### Examples
+### Usage
+
+Run the command below for getting all available commands. 
+```
+$ jira help
+```
 
 #### Create a branch from master based on the Jira issue summary
 
 ```
-$ jira branch issue-key
+$ jira branch <issue-key>
 ```
-Where `issue-key` is the key to the ticket in the Jira:
-> `https://your-company.atlassian.net/browse/issue-key`
+Where `<issue-key>` is the key to the ticket in the Jira:
+> `https://your-company.atlassian.net/browse/<issue-key>`
 
 This will create a branch by this command:
 
@@ -40,3 +45,9 @@ Currently implemented two types of prefix:
 ### Options
 * **-p, --prefix** - custom branch prefix 
 * **-m, --master** - master branch
+
+#### Open Atlassian Jira issue in a browser
+
+```
+$ jira open <issue-key>
+```

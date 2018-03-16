@@ -2,6 +2,7 @@
     "host": "https://company.atlassian.net",
     "api_path": "/rest/api/2",
     "issue_path": "/issue",
+    "browse_path": "/browse",
     "user": "your@mail.com",
     "pass": "your jira pas",
     "git": {

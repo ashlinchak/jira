@@ -42,6 +42,10 @@ func (cl *Client) GetIssue(issueKey string) (*Issue, error) {
 	return nil, errors.New("Cannot find the issue with key " + issueKey)
 }
 
+func (cl *Client) BrowseIssueURI(issueKey string) string {
+	return cl.config.BrowseIssueURI + "/" + issueKey
+}
+
 func setConfig(cl *Client) {
 	config := Config{}
 	config.SetDefaults()

@@ -14,7 +14,7 @@ var branchCmd = &cobra.Command{
 	Short:   "Create a GIT branch based on Atlassian Jira isssue key",
 	Long:    `Create a GIT branch based on Atlassian Jira isssue key.`,
 	Example: "jira branch lm-1112 --prefix=capability",
-	Run:     run,
+	Run:     runBranchCmd,
 }
 
 var prefix string
@@ -35,7 +35,7 @@ Examples:
 `)
 }
 
-func run(cmd *cobra.Command, args []string) {
+func runBranchCmd(cmd *cobra.Command, args []string) {
 	if len(args) < 1 {
 		fmt.Println("You should provide at least one argument")
 		return

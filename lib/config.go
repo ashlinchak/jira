@@ -8,13 +8,15 @@ import (
 
 // Config for Jira
 type Config struct {
-	Host      string `json:"host"`
-	APIPath   string `json:"api_path"`
-	IssuePath string `json:"issue_path"`
-	User      string `json:"user"`
-	Git       git    `json:"git"`
-	Password  string
-	IssueURI  string
+	Host            string `json:"host"`
+	APIPath         string `json:"api_path"`
+	IssuePath       string `json:"issue_path"`
+	BrowseIssuePath string `json:"browse_path"`
+	User            string `json:"user"`
+	Git             git    `json:"git"`
+	Password        string
+	IssueURI        string
+	BrowseIssueURI  string
 }
 
 type git struct {
@@ -46,4 +48,5 @@ func (config *Config) SetDefaults() {
 		config.Password = os.Getenv("JIRA_PASS")
 	}
 	config.IssueURI = config.Host + config.APIPath + config.IssuePath
+	config.BrowseIssueURI = config.Host + config.BrowseIssuePath
 }

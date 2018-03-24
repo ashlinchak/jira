@@ -23,8 +23,12 @@ Run the command below for getting all available commands.
 ```
 $ jira help
 ```
+Currently implemented these commands:
+* branch
+* open
 
-#### Create a branch from master based on the Jira issue summary
+
+#### branch: create a branch from master based on the Jira issue summary
 
 ```
 $ jira branch <issue-key>
@@ -42,12 +46,13 @@ Currently implemented two types of prefix:
 * Story - will create a branch with the prefix **feature**
 * Bug - will create a branch with the prefix **bugfix**
 
-### Options
+Options:
 * **-p, --prefix** - custom branch prefix 
 * **-m, --master** - master branch
 
-#### Open Atlassian Jira issue in a browser
+#### open: open Atlassian Jira issue in a browser
 
 ```
 $ jira open <issue-key>
 ```
+This command is opening Jira issue in your default browser.

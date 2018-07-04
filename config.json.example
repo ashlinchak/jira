@@ -5,11 +5,16 @@
     "browse_path": "/browse",
     "user": "your@mail.com",
     "pass": "your jira pas",
-    "git": {
-        "branches": {
-            "master": "master",
-            "feature": "feature",
-            "hotfix": "bugfix"
+    "branch": {
+        "master": "master",
+        "prefixes": {
+            "Feature": "feature",
+            "Bug": "bugfix",
+            "Story": "story",
+            "Tech Task": "tech_task",
+            "Spike": "spike",
+            "Implementation Task": "implementation_task",
+            "Problem": "problem"
         }
     }
 }

@@ -19,7 +19,7 @@ You can specify the Atlassian Jira pass in the `config.json` or via `JIRA_PASS` 
 
 ### Usage
 
-Run the command below for getting all available commands. 
+Run the command below for getting all available commands.
 ```
 $ jira help
 ```
@@ -42,12 +42,10 @@ This will create a branch by this command:
 git checkout -b feature/ISSUE-KEY_your_issue_summary_here master
 ```
 
-Currently implemented two types of prefix:
-* Story - will create a branch with the prefix **feature**
-* Bug - will create a branch with the prefix **bugfix**
+You should implement a mapping for matching an issue key with a branch prefix in the `prefix` section of the `config.json` file.
 
 Options:
-* **-p, --prefix** - custom branch prefix 
+* **-p, --prefix** - custom branch prefix
 * **-m, --master** - master branch
 
 #### open: open Atlassian Jira issue in a browser

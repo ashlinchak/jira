@@ -13,20 +13,15 @@ type Config struct {
 	IssuePath       string `json:"issue_path"`
 	BrowseIssuePath string `json:"browse_path"`
 	User            string `json:"user"`
-	Git             git    `json:"git"`
+	Branch          branch `json:"branch"`
 	Password        string
 	IssueURI        string
 	BrowseIssueURI  string
 }
 
-type git struct {
-	Branches branch `json:"branches"`
-}
-
 type branch struct {
-	Master  string `json:"master"`
-	Feature string `json:"feature"`
-	Hotfix  string `json:"hotfix"`
+	Master   string            `json:"master"`
+	Prefixes map[string]string `json:"prefixes"`
 }
 
 func (config *Config) SetDefaults() {

@@ -56,19 +56,27 @@ func runBranchCmd(cmd *cobra.Command, args []string) {
 	}
 
 	if prefix == "" {
-		switch issue.Fields.IssueType.Name {
-		case "Story":
-			prefix = config.Git.Branches.Feature
-		case "Bug":
-			prefix = config.Git.Branches.Hotfix
-		}
+		prefix = branchPrefix(config, issue.Fields.IssueType.Name)
 	}
 
 	if master == "" {
-		master = config.Git.Branches.Master
+		master = config.Branch.Master
 	}
 
 	createBranch(*issue, config, prefix)
+}
+
+func branchPrefix(config lib.Config, issueTypeName string) string {
+	prefix := ""
+
+	for issueType, branchPrefix := range config.Branch.Prefixes {
+		if issueTypeName == issueType {
+			prefix = branchPrefix
+			break
+		}
+	}
+
+	return prefix
 }
 
 func createBranch(issue lib.Issue, config lib.Config, prefix string) {
@@ -79,7 +87,7 @@ func createBranch(issue lib.Issue, config lib.Config, prefix string) {
 
 	git := lib.Git{}
 
-	git.CreateBranch(branchName, config.Git.Branches.Master)
+	git.CreateBranch(branchName, config.Branch.Master)
 }
 
 func prepareBranchName(str string) string {

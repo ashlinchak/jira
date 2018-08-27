@@ -1,6 +1,12 @@
-# Jira Go plugin
+# Jira Go console utility
 
 ### Installation
+
+#### Easy way
+
+Download an appropriate archive and unpack it. Change `config.json` according to your credentials. Now you can run the compiled file (`jira` or `jira.exe`).
+
+#### Hard way
 * Install Go language
 * Clone this repository
 * Build executable file by the command:

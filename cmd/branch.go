@@ -92,10 +92,14 @@ func createBranch(issue lib.Issue, config lib.Config, prefix string) {
 
 func prepareBranchName(str string) string {
 	name := strings.ToLower(str)
-	// Remove special symbols
+
+	// Accept only alphabet, numbers and underscore
 	reg, _ := regexp.Compile("[^a-zA-Z0-9_]+")
 	name = reg.ReplaceAllString(name, "_")
-	// remove special symbols from the end of the string
-	req, _ := regexp.Compile("[^a-zA-Z0-9]+$")
-	return req.ReplaceAllString(name, "")
+
+	// remove not valid symbols from head and tail of string
+	reg = regexp.MustCompile("(^[^a-zA-Z0-9]+|[^a-zA-Z0-9]+$)")
+	name = reg.ReplaceAllString(name, "")
+
+	return name
 }

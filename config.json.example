@@ -4,7 +4,7 @@
     "issue_path": "/issue",
     "browse_path": "/browse",
     "user": "your@mail.com",
-    "pass": "your jira pas",
+    "password": "your jira pas",
     "branch": {
         "master": "master",
         "prefixes": {

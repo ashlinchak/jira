@@ -101,5 +101,9 @@ func prepareBranchName(str string) string {
 	reg = regexp.MustCompile("(^[^a-zA-Z0-9]+|[^a-zA-Z0-9]+$)")
 	name = reg.ReplaceAllString(name, "")
 
+	// remove duplicate underscores
+	reg = regexp.MustCompile("_{2,}")
+	name = reg.ReplaceAllString(name, "_")
+
 	return name
 }

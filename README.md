@@ -60,3 +60,10 @@ Options:
 $ jira open <issue-key>
 ```
 This command is opening Jira issue in your default browser.
+
+### Tests
+
+You can run tests by this command:
+```
+$: ./test.sh
+```

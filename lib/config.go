@@ -14,7 +14,7 @@ type Config struct {
 	BrowseIssuePath string `json:"browse_path"`
 	User            string `json:"user"`
 	Branch          branch `json:"branch"`
-	Password        string
+	Password        string `json:"password"`
 	IssueURI        string
 	BrowseIssueURI  string
 }
